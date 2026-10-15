@@ -1,12 +1,19 @@
 {
-  "name": "template-package",
+  "name": "@dependahub/aws-dynamo",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "AWS Dynamo DB / DocumentClient Wrapper",
+  "license": "MIT",
+  "repository": "github:dependahub/aws-dynamo",
+  "bugs": "https://github.com/dependahub/aws-dynamo/issues",
+  "author": "madakaheri",
   "type": "module",
-  "types": "@types/index.d.ts",
+  "main": "./src/index.js",
+  "types": "./@types/index.d.ts",
   "engines": {
     "node": ">=24"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "rm -rf @types && tsc",
@@ -15,23 +22,18 @@
     "test": "node --test",
     "prepublishOnly": "npm run format && npm run build"
   },
+  "keywords": [
+    "aws",
+    "dynamodb",
+    "documentclient"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1152.0",
+    "@aws-sdk/lib-dynamodb": "^3.1152.0"
+  },
   "devDependencies": {
-    "@types/node": "^25.5.2",
-    "eslint-plugin-jsdoc": "^62.9.0",
-    "typescript": "^6.0.2",
-    "xo": "^2.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dependahub/template-package.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dependahub/template-package/issues"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "keywords": [],
-  "author": "",
-  "license": ""
+    "@types/node": "^26.6.5",
+    "typescript": "^6.0.3",
+    "xo": "^5.0.1"
+  }
 }

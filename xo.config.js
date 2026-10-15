@@ -1,8 +1,6 @@
-import jsdocPlugin from 'eslint-plugin-jsdoc';
 
 /** @type {import('xo').FlatXoConfig} */
 const xoConfig = [
-	jsdocPlugin.configs['flat/recommended'],
 	{
 		name: 'global-ignores',
 		ignores: [
@@ -13,10 +11,13 @@ const xoConfig = [
 		name: 'project-rules',
 		rules: {
 			'capitalized-comments': 'off',
+			'unicorn/single-line-block-comment-style': 'off',
 			'jsdoc/require-description': 'off',
 			'jsdoc/require-param': 'error',
 			'jsdoc/require-returns': 'error',
 			'jsdoc/require-returns-description': 'off',
+			'jsdoc/require-asterisk-prefix': 'off',
+			'jsdoc/require-param-description': 'off',
 		},
 	},
 ];
