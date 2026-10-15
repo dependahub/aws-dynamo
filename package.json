@@ -1,19 +1,26 @@
 {
   "name": "@dependahub/aws-dynamo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "AWS Dynamo DB / DocumentClient Wrapper",
   "license": "MIT",
   "repository": "github:dependahub/aws-dynamo",
   "bugs": "https://github.com/dependahub/aws-dynamo/issues",
   "author": "madakaheri",
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./@types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./@types/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "sideEffects": true,
   "engines": {
     "node": ">=24"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "build": "rm -rf @types && tsc",
@@ -22,6 +29,10 @@
     "test": "node --test",
     "prepublishOnly": "npm run format && npm run build"
   },
+  "files": [
+    "@types/",
+    "src/"
+  ],
   "keywords": [
     "aws",
     "dynamodb",
